@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidLocalDatabase</string>
+    <string name="studename">STUDENT NAME</string>
+    <string name="mobilenumber">STUDENT MOBILE NUMBER</string>
+    <string name="buttonname">INSERT</string>
+</resources>

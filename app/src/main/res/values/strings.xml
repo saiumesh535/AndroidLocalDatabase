@@ -3,4 +3,6 @@
     <string name="studename">STUDENT NAME</string>
     <string name="mobilenumber">STUDENT MOBILE NUMBER</string>
     <string name="buttonname">INSERT</string>
+    <string name="getValues">get values</string>
+    <string name="update">update</string>
 </resources>

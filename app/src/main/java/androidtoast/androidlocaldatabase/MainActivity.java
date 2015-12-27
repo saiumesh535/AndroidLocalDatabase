@@ -8,11 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
 
     EditText studentName,mobileNumber;
     Button insert;
+    Button getValues;
+    Button updateValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         studentName     =   (EditText)findViewById(R.id.studentName);
         mobileNumber    =   (EditText)findViewById(R.id.mobileNumber);
         insert          =   (Button)findViewById(R.id.insert);
+        getValues       =   (Button)findViewById(R.id.getValues);
+        updateValue          =   (Button)findViewById(R.id.updateValue);
 
         //storing the values on button click
         insert.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +59,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    //getting the values from local database
+        getValues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                ArrayList arrayList = new LocalDatabase(MainActivity.this).getValues();
+
+                if(arrayList.size()==0){
+
+                    Toast.makeText(MainActivity.this,"try inserting values before getting them",Toast.LENGTH_LONG).show();
+
+                    return;
+                }
+
+                Toast.makeText(MainActivity.this,arrayList.toString(),Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+
+        //updating the values in local database
+        updateValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //lets say i'm updating mobile number of student with name akash
+                int numberOfRowsUpdated = new LocalDatabase(MainActivity.this).updateValue("akash","1234567890");
+
+                if(numberOfRowsUpdated>0){
+                    Toast.makeText(MainActivity.this,"Updated values successfully",Toast.LENGTH_LONG).show();
+                }
+                else Toast.makeText(MainActivity.this,"Please check entered details and try again",Toast.LENGTH_LONG).show();
+
+            }
+        });
 
 
 

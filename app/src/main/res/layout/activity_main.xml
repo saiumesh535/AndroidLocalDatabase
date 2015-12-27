@@ -51,6 +51,26 @@
             android:layout_height="wrap_content" />
 
 
+        <Button
+            android:id="@+id/getValues"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/getValues"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/updateValue"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/update"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
 
     </LinearLayout>
 
